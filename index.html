@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mohamed Ashik | AI Engineer & Data Analyst Portfolio</title>
+  <meta name="description" content="AI & Data Science Engineer portfolio showcasing intelligent systems, machine learning models, and interactive data analytics.">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <!-- EmailJS SDK for client-side email sending -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+<body class="theme-nexus">
+  <!-- 3D Canvas Background -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- Custom Cursor -->
+  <div id="custom-cursor-dot" class="cursor-dot"></div>
+  <div id="custom-cursor-outline" class="cursor-outline"></div>
+
+  <!-- Scroll Progress Indicator -->
+  <div class="scroll-progress-container">
+    <div id="scroll-progress-bar"></div>
+  </div>
+
+  <!-- Header & Navigation -->
+  <header>
+    <div class="logo">
+      <a href="#hero">
+        <span class="logo-symbol">&lt;/&gt;</span>
+        <span class="logo-text">Mohamed Ashik</span>
+      </a>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#hero" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="header-right">
+      <!-- Hamburger Menu Button (Mobile Only) -->
+      <button class="hamburger-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+      <!-- Dynamic Theme Switcher Controls -->
+      <div class="theme-switcher">
+        <button class="theme-btn theme-btn-crimson hover-target" data-theme="crimson" aria-label="Crimson Cyber Theme" title="Crimson Cyber"></button>
+        <button class="theme-btn theme-btn-cyber hover-target" data-theme="cyber" aria-label="Cyber Neon Theme" title="Cyber Neon"></button>
+        <button class="theme-btn theme-btn-solar hover-target" data-theme="solar" aria-label="Solar Eclipse Theme" title="Solar Eclipse"></button>
+        <button class="theme-btn theme-btn-bio hover-target" data-theme="bio" aria-label="Bio-Grid Theme" title="Bio-Grid"></button>
+        <button class="theme-btn theme-btn-nexus hover-target active" data-theme="nexus" aria-label="AI Nexus Theme" title="AI Nexus"></button>
+      </div>
+      <div class="header-socials">
+        <a href="https://github.com/ashikhub23" target="_blank" aria-label="GitHub" class="social-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
+        </a>
+        <a href="https://linkedin.com/in/mohamedashik2306" target="_blank" aria-label="LinkedIn" class="social-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+        </a>
+        <a href="/mycv.pdf" download="Mohamed_Ashik_Resume.pdf" aria-label="Download Resume" class="social-icon header-resume-btn" title="Download Resume">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Overlay -->
+  <div class="mobile-nav-overlay">
+    <nav class="mobile-nav">
+      <ul>
+        <li><a href="#hero" class="mobile-nav-link">Home</a></li>
+        <li><a href="#about" class="mobile-nav-link">About</a></li>
+        <li><a href="#experience" class="mobile-nav-link">Experience</a></li>
+        <li><a href="#skills" class="mobile-nav-link">Skills</a></li>
+        <li><a href="#projects" class="mobile-nav-link">Projects</a></li>
+        <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+      </ul>
+      <div class="mobile-nav-socials">
+        <a href="https://github.com/ashikhub23" target="_blank" aria-label="GitHub">GitHub</a>
+        <a href="https://linkedin.com/in/mohamedashik2306" target="_blank" aria-label="LinkedIn">LinkedIn</a>
+        <a href="/mycv.pdf" download="Mohamed_Ashik_Resume.pdf">Download Resume</a>
+      </div>
+    </nav>
+  </div>
+
+  <!-- Main Content Scroll Container -->
+  <main id="scroll-container">
+    
+    <!-- Hero (Page 1) -->
+    <section id="hero" class="panel">
+      <div class="hero-content">
+        <div class="hero-tagline animate-text">INTELLIGENT SYSTEMS & DATA ANALYTICS</div>
+        <h1 class="hero-title animate-text">
+          Translating Data into<br>
+          <span class="gradient-text">AI-Powered Solutions</span>
+        </h1>
+        <p class="hero-desc animate-text">
+          I am an AI & Data Science Engineer specializing in data engineering, machine learning modeling, and responsive frontend integrations. Bridging analytical backends with creative user experiences.
+        </p>
+        <div class="hero-actions animate-text">
+          <a href="#projects" class="btn btn-primary hover-target">
+            <span>Explore Work</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+          <a href="#contact" class="btn btn-secondary hover-target">Let's Connect</a>
+          <a href="/mycv.pdf" download="Mohamed_Ashik_Resume.pdf" class="btn btn-resume hover-target">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            <span>Resume</span>
+          </a>
+        </div>
+      </div>
+      <div class="hero-indicator">
+        <span class="mouse-icon">
+          <span class="wheel"></span>
+        </span>
+        <span class="indicator-text">Scroll to explore</span>
+      </div>
+    </section>
+
+    <!-- About (Page 2) -->
+    <section id="about" class="panel">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-number">01.</span>
+          <h2>About Me</h2>
+        </div>
+        <div class="about-panel-layout">
+          <div class="about-text-content">
+            <p>
+              Hi, I'm Mohamed Ashik, an AI & Data Science student pursuing a B.Tech in Artificial Intelligence and Data Science at M.A.M College of Engineering, Tiruchirappalli (2023 - 2027). I focus on translating complex data patterns into automated, intelligence-driven products.
+            </p>
+            <p>
+              My experience spans full-stack AI prototyping, computer vision algorithms, and real-time dashboard analytics. I have hands-on exposure in data cleaning, exploratory analysis, and AI development gained through active academic projects and professional internships.
+            </p>
+            <p>
+              I love engineering custom solutions that make data interactive. By connecting Three.js, shaders, and data interfaces, I aim to present biological, system, or business telemetry in rich digital forms.
+            </p>
+          </div>
+          
+          <div class="about-highlights hover-target">
+            <h3>Academic Background</h3>
+            <div class="about-edu-card">
+              <h4>B.Tech in Artificial Intelligence & Data Science</h4>
+              <span>Sep 2023 – May 2027</span>
+              <p>M.A.M College of Engineering, Tiruchirappalli</p>
+              <p style="color: var(--text-muted); font-size: 0.8rem; margin-top: 0.5rem;">Core study: Predictive Analytics, Machine Learning, Statistical Methods, Neural Networks, Database Architectures.</p>
+            </div>
+            <a href="/mycv.pdf" download="Mohamed_Ashik_Resume.pdf" class="btn btn-resume about-resume-btn hover-target">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+              <span>Download Full Resume</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience (Page 3) -->
+    <section id="experience" class="panel">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-number">02.</span>
+          <h2>Internships</h2>
+        </div>
+        
+        <div class="timeline-container">
+          <!-- Internship 1 -->
+          <div class="timeline-item hover-target">
+            <div class="timeline-dot"></div>
+            <div class="timeline-meta">
+              <span class="timeline-role">Data Analyst Intern</span>
+              <span class="timeline-date">Sep 2025 – Nov 2025</span>
+            </div>
+            <span class="timeline-company">Elevate Labs (Awarded Best Performer)</span>
+            <ul class="timeline-desc">
+              <li>Performed comprehensive data cleaning, preprocessing, and exploratory analysis.</li>
+              <li>Built interactive dashboards and reports using Python and PowerBI.</li>
+            </ul>
+          </div>
+
+          <!-- Internship 2 -->
+          <div class="timeline-item hover-target">
+            <div class="timeline-dot"></div>
+            <div class="timeline-meta">
+              <span class="timeline-role">Data Science Intern</span>
+              <span class="timeline-date">Mar 2025 – May 2025</span>
+            </div>
+            <span class="timeline-company">EdVedha</span>
+            <ul class="timeline-desc">
+              <li>Built an E-Commerce Product Recommendation System.</li>
+              <li>Utilized collaborative filtering, content-based recommendation techniques, and scikit-learn.</li>
+            </ul>
+          </div>
+
+          <!-- Internship 3 -->
+          <div class="timeline-item hover-target">
+            <div class="timeline-dot"></div>
+            <div class="timeline-meta">
+              <span class="timeline-role">AI & ML Intern</span>
+              <span class="timeline-date">Jul 2025</span>
+            </div>
+            <span class="timeline-company">TechShiksha, Bangalore</span>
+            <ul class="timeline-desc">
+              <li>Worked on NLP, Computer Vision applications, and Azure Cloud integrations.</li>
+              <li>Built document intelligence pipelines using machine learning algorithms.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills & Credentials (Page 4) -->
+    <section id="skills" class="panel">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-number">03.</span>
+          <h2>Skills & Credentials</h2>
+        </div>
+        
+        <div class="skills-credentials-grid">
+          <div class="skills-deck">
+            <h3>Technical Capabilities</h3>
+            <div class="skills-section-grid">
+              <div class="skill-card hover-target">
+                <div class="skill-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"></polygon><line x1="12" y1="22" x2="12" y2="15.5"></line><polyline points="22 8.5 12 15.5 2 8.5"></polyline><polyline points="2 15.5 12 9 22 15.5"></polyline><line x1="12" y1="2" x2="12" y2="9"></line></svg>
+                </div>
+                <h4>AI & Modeling</h4>
+                <p>Python, OpenCV, Face Recognition, Scikit-Learn, NLP, SQL</p>
+              </div>
+              <div class="skill-card hover-target">
+                <div class="skill-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path><path d="M22 12A10 10 0 0 0 12 2v10z"></path></svg>
+                </div>
+                <h4>Data Analytics</h4>
+                <p>Power BI, Excel, Pandas, Matplotlib, Seaborn, EDA</p>
+              </div>
+              <div class="skill-card hover-target">
+                <div class="skill-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+                </div>
+                <h4>Backend & Cloud</h4>
+                <p>Flask, SQLite, Cloudinary, Azure Cloud</p>
+              </div>
+              <div class="skill-card hover-target">
+                <div class="skill-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                </div>
+                <h4>Frontend Core</h4>
+                <p>HTML5, CSS3, JavaScript, Webcam API, Responsive UI</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="certs-deck">
+            <h3>Credentials & Milestones</h3>
+            <div class="certs-grid">
+              <!-- Cert 1 -->
+              <div class="cert-item hover-target">
+                <div class="cert-badge-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                </div>
+                <div class="cert-info">
+                  <h4>Microsoft AI & Cloud</h4>
+                  <p>NLP & Describe Cloud Certifications</p>
+                </div>
+              </div>
+              <!-- Cert 2 -->
+              <div class="cert-item hover-target">
+                <div class="cert-badge-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+                </div>
+                <div class="cert-info">
+                  <h4>Google Analytics</h4>
+                  <p>Google Professional Certificate</p>
+                </div>
+              </div>
+              <!-- Cert 3 -->
+              <div class="cert-item hover-target achievement-item">
+                <div class="cert-badge-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                </div>
+                <div class="cert-info">
+                  <h4>Best Performer</h4>
+                  <p>Elevate Labs (2025)</p>
+                </div>
+              </div>
+              <!-- Cert 4 -->
+              <div class="cert-item hover-target achievement-item">
+                <div class="cert-badge-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                </div>
+                <div class="cert-info">
+                  <h4>Research Presenter</h4>
+                  <p>AI in Healthcare (M.A.M Conference)</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects (Page 5) -->
+    <section id="projects" class="panel">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-number">04.</span>
+          <h2>Projects</h2>
+        </div>
+        <div class="projects-grid">
+          <!-- Project 1 -->
+          <article class="project-card hover-target">
+            <div class="project-image-wrapper">
+              <div class="project-gradient-bg proj-g1"></div>
+              <div class="project-overlay-content">
+                <span class="project-meta">Full-Stack AI Prototyping</span>
+                <h3>SmartPix</h3>
+              </div>
+            </div>
+            <div class="project-info">
+              <p>A full-stack guest face recognition matching system that processes webcam selfies and cross-references them against large event galleries, hosted with Cloudinary storage.</p>
+              <div class="project-tags">
+                <span>Python</span>
+                <span>Flask</span>
+                <span>Face Recognition</span>
+                <span>Cloudinary</span>
+              </div>
+              <div class="project-links">
+                <a href="http://smartpix.co.in" target="_blank" class="project-link hover-target">smartpix.co.in &rarr;</a>
+              </div>
+            </div>
+          </article>
+          
+          <!-- Project 2 -->
+          <article class="project-card hover-target">
+            <div class="project-image-wrapper">
+              <div class="project-gradient-bg proj-g2"></div>
+              <div class="project-overlay-content">
+                <span class="project-meta">Generative AI</span>
+                <h3>PlantTalk AI</h3>
+              </div>
+            </div>
+            <div class="project-info">
+              <p>An interactive system generating lip-synced talking plant videos from static images, integrating facial mapping, text-to-speech, and script processing in English and Tamil.</p>
+              <div class="project-tags">
+                <span>Generative AI</span>
+                <span>Facial Mapping</span>
+                <span>Text-to-Speech</span>
+                <span>Python</span>
+              </div>
+              <div class="project-links">
+                <span class="project-link" style="opacity: 0.6;">Local Environment &rarr;</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3 -->
+          <article class="project-card hover-target">
+            <div class="project-image-wrapper">
+              <div class="project-gradient-bg proj-g3"></div>
+              <div class="project-overlay-content">
+                <span class="project-meta">Computer Vision</span>
+                <h3>Smart Attendance</h3>
+              </div>
+            </div>
+            <div class="project-info">
+              <p>Automated classroom/office logging system utilizing OpenCV and Face Recognition to automatically register attendees in real-time, syncing to a secure SQLite database.</p>
+              <div class="project-tags">
+                <span>OpenCV</span>
+                <span>Face Recognition</span>
+                <span>Python</span>
+                <span>SQLite</span>
+              </div>
+              <div class="project-links">
+                <span class="project-link" style="opacity: 0.6;">Local Prototype &rarr;</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 4 -->
+          <article class="project-card hover-target">
+            <div class="project-image-wrapper">
+              <div class="project-gradient-bg proj-g1" style="filter: hue-rotate(180deg);"></div>
+              <div class="project-overlay-content">
+                <span class="project-meta">Web Application</span>
+                <h3>Smart Restaurant</h3>
+              </div>
+            </div>
+            <div class="project-info">
+              <p>QR-code digital ordering system for dining tables featuring real-time kitchen status alerts, order processing, automated GST calculation, and billing telemetry.</p>
+              <div class="project-tags">
+                <span>Flask</span>
+                <span>JavaScript</span>
+                <span>HTML/CSS</span>
+                <span>SQLite</span>
+              </div>
+              <div class="project-links">
+                <span class="project-link" style="opacity: 0.6;">GitHub Repo &rarr;</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact (Page 6) -->
+    <section id="contact" class="panel">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-number">05.</span>
+          <h2>Get In Touch</h2>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-info">
+            <h3>Let's collaborate on something extraordinary.</h3>
+            <p>I am currently seeking internship roles and professional collaboration opportunities in Data Analytics, Machine Learning, and Creative Software Engineering. Drop me a message to discuss work!</p>
+            <div class="contact-details">
+              <div class="contact-detail-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                <span>mohamedashik2306@gmail.com</span>
+              </div>
+              <div class="contact-detail-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                <span>+91-9360743674</span>
+              </div>
+              <div class="contact-detail-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                <span>Tiruchirappalli, India</span>
+              </div>
+            </div>
+          </div>
+          <div class="contact-form-wrapper">
+            <form id="portfolio-contact-form" class="contact-form">
+              <div class="form-group">
+                <input type="text" id="form-name" required placeholder=" " class="hover-target">
+                <label for="form-name">Your Name</label>
+                <div class="input-line"></div>
+              </div>
+              <div class="form-group">
+                <input type="email" id="form-email" required placeholder=" " class="hover-target">
+                <label for="form-email">Your Email</label>
+                <div class="input-line"></div>
+              </div>
+              <div class="form-group">
+                <textarea id="form-message" required placeholder=" " rows="4" class="hover-target"></textarea>
+                <label for="form-message">Your Message</label>
+                <div class="input-line"></div>
+              </div>
+              <button type="submit" id="form-submit-btn" class="btn btn-primary hover-target">
+                <span>Send Message</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <footer>
+        <p>&copy; 2026 Mohamed Ashik. All Rights Reserved. Crafted with code and 3D particles.</p>
+      </footer>
+    </section>
+  </main>
+
+  <script type="module" src="/main.js"></script>
+</body>
+</html>
