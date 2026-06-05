@@ -652,8 +652,13 @@ const toggleMobileNav = () => {
   hamburgerBtn.setAttribute('aria-expanded', isOpen);
 
   // Prevent body scroll when menu is open
-  document.body.style.overflow = isOpen ? 'hidden' : '';
-  if (scrollContainer) scrollContainer.style.overflowY = isOpen ? 'hidden' : '';
+  if (isOpen) {
+    document.body.style.overflow = 'hidden';
+    document.documentElement.style.overflow = 'hidden';
+  } else {
+    document.body.style.overflow = '';
+    document.documentElement.style.overflow = '';
+  }
 };
 
 const closeMobileNav = () => {
@@ -661,7 +666,7 @@ const closeMobileNav = () => {
   mobileNavOverlay.classList.remove('open');
   hamburgerBtn.setAttribute('aria-expanded', 'false');
   document.body.style.overflow = '';
-  if (scrollContainer) scrollContainer.style.overflowY = '';
+  document.documentElement.style.overflow = '';
 };
 
 if (hamburgerBtn) {
@@ -682,11 +687,8 @@ mobileNavLinks.forEach(link => {
 
     // Scroll to section after small delay for animation
     setTimeout(() => {
-      if (targetSection && scrollContainer) {
-        scrollContainer.scrollTo({
-          top: targetSection.offsetTop,
-          behavior: 'smooth'
-        });
+      if (targetSection) {
+        targetSection.scrollIntoView({ behavior: 'smooth' });
       }
     }, 300);
   });

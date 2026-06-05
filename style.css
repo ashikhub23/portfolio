@@ -1213,12 +1213,14 @@ footer {
   justify-content: center;
   opacity: 0;
   visibility: hidden;
+  pointer-events: none;
   transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .mobile-nav-overlay.open {
   opacity: 1;
   visibility: visible;
+  pointer-events: auto;
 }
 
 .mobile-nav {
@@ -1311,17 +1313,24 @@ footer {
 
 /* Tablet & Small Desktop (max-width: 1024px) */
 @media (max-width: 1024px) {
+  html {
+    scroll-snap-type: none;
+    overflow-y: auto;
+    height: auto;
+  }
+
+  body {
+    overflow: auto;
+    overflow-x: hidden;
+    height: auto;
+  }
+
   .panel {
     padding: 80px 6% 30px 6%;
     height: auto;
     min-height: 100vh;
     scroll-snap-align: none;
     overflow-y: visible;
-  }
-  
-  html {
-    scroll-snap-type: none;
-    overflow-y: scroll;
   }
   
   #scroll-container {
@@ -1382,10 +1391,17 @@ footer {
 /* Mobile (max-width: 768px) */
 @media (max-width: 768px) {
   .hamburger-btn {
-    display: flex;
+    display: flex !important;
+    order: -1;
+    min-width: 40px;
+    min-height: 40px;
   }
 
   nav {
+    display: none !important;
+  }
+
+  .theme-switcher {
     display: none;
   }
 
@@ -1396,6 +1412,12 @@ footer {
   .header-right {
     margin-left: auto;
     gap: 0.75rem;
+    display: flex;
+    align-items: center;
+  }
+
+  .header-socials {
+    display: none;
   }
 
   .hero-title {
